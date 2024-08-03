@@ -1,0 +1,29 @@
+{
+  "name": "learningreact",
+  "version": "1.0.0",
+  "description": "manually initialising npm",
+  "main": "App.js",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel index.html",
+    "build": "parcel build index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/akash-404/LearningReact.git"
+  },
+  "author": "Akash Gupta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/akash-404/LearningReact/issues"
+  },
+  "homepage": "https://github.com/akash-404/LearningReact#readme",
+  "devDependencies": {
+    "parcel": "^2.12.0",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  }
+}
