@@ -17,3 +17,27 @@
 - diagnostics
 - error handling
 - host app on HTTPs
+
+
+Structure---
+/*
+  Header
+    - Logo
+    - Nav items
+
+  Body
+    - Search
+    - Restaurant container
+      - Restaurant card
+        - Img
+        - Name
+        - Star rating
+        - cuisines
+        - time for delivery etc
+  
+  Footer
+    - Copyright
+    - Links
+    - Address
+    - Contact
+*/
