@@ -1,4 +1,7 @@
+import { IMG_BASE_URL } from "../utils/constants";
+
 const RestaurantCard = (props) => {
+  //  without object destructuring
   // const resData = props.resData;
   // return (
   //   <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
@@ -14,21 +17,34 @@ const RestaurantCard = (props) => {
   //     <h4>{resData.order.deliveryTime}</h4>
   //   </div>
   // );
+
+  // for zomato data
+  // const {
+  //   image: { url },
+  //   name,
+  //   cuisine,
+  //   rating: { rating_text },
+  //   cft: { text: costForTwo },
+  // } = props?.resData?.info;
+  // const cuisineNames = cuisine.map((item) => item.name + ", ");
+  // const { deliveryTime } = props?.resData?.order;
+
+  // for Swiggy data
   const {
-    image: { url },
+    cloudinaryImageId :url,
     name,
-    cuisine,
-    rating: { rating_text },
-    cft: { text: costForTwo },
+    cuisines,
+    avgRating,
+    costForTwo,
+    sla: {slaString : deliveryTime}
   } = props?.resData?.info;
-  const cuisineNames = cuisine.map((item) => item.name + ", ");
-  const { deliveryTime } = props?.resData?.order;
+
   return (
     <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img className="res-logo" src={url} alt={name} />
+      <img className="res-logo" src={IMG_BASE_URL+url} alt={name} />
       <h3>{name}</h3>
-      <h4>{cuisineNames}</h4>
-      <h4>{rating_text} *</h4>
+      <h4>{cuisines.join(', ')}</h4>
+      <h4>{avgRating} *</h4>
       <h4>{costForTwo}</h4>
       <h4>{deliveryTime}</h4>
     </div>

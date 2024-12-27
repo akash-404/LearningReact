@@ -28,6 +28,18 @@
     }
 }
 
+.filters{
+    font-size: 22px;
+    font-weight: 800;
+    margin: 8px 0;
+    .filter-btn{
+        border: 1px solid rgb(228, 227, 227);
+        padding: 6px 8px;
+        border-radius: 6px;
+        font-size: 16px;
+    }
+}
+
 .res-container{
     display: flex;
     flex-wrap: wrap;
@@ -36,10 +48,12 @@
     .res-card{
         width: 200px;
         padding: 8px;
+        border-radius: 6px;
         .res-logo{
             width: 100%;
             height: 120px;
             object-fit: cover;
+            border-radius: 6px;
         }
         &:hover{
             box-shadow: 2px 2px 8px 1px #c5c3c3;
@@ -50,6 +64,55 @@
 
 .search{
     padding: 8px 0;
+}
+
+.shimmer-container{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .shimmer-card{
+        height: 350px;
+        width: 200px;
+        padding: 16px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        gap: 12px;
+        flex-direction: column;
+        .shimmer {
+            background: linear-gradient(
+              90deg,
+              #e0e0e0 25%,
+              #f0f0f0 50%,
+              #e0e0e0 75%
+            );
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+        }
+        .image {
+            width: 100%;
+            height: 150px;
+            border-radius: 8px;
+        }
+        
+        .text {
+        height: 20px;
+        }
+        
+        .title {
+        width: 60%;
+        }
+        
+        .subtitle {
+        width: 40%;
+        }
+        
+        .small {
+        width: 80%;
+        height: 16px;
+        }
+    }
 }
 
 .footer{

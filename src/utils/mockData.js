@@ -1,3 +1,5 @@
+// zomato mock data
+
 const allResList = [
     {
       type: "restaurant",
