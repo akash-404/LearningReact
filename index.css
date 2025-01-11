@@ -73,6 +73,11 @@
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
+
+    a{
+        color: black;
+        text-decoration: none;
+    }
     
     .res-card{
         width: 200px;
@@ -156,5 +161,18 @@
     .footer-bottom{
         border-top: 1px solid grey;
         padding-top: 12px;
+    }
+}
+
+/* about-page */
+.user-card{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+    padding: 16px;
+    .photo{
+        height: 120px;
+        width: 120px;
+        border-radius: 100%;
     }
 }
