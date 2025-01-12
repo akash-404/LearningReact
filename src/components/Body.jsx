@@ -83,7 +83,7 @@ const Body = () => {
           <RestaurantCard resData={allResList[4]} />
           <RestaurantCard resData={allResList[5]} /> */}
         {filteredRes.map((restaurant) => (
-			<Link  key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
+			<Link className="flex"  key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
 				<RestaurantCard resData={restaurant} />
 			</Link>
         ))}
