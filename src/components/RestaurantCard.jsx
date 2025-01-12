@@ -40,9 +40,9 @@ const RestaurantCard = (props) => {
   } = props?.resData?.info;
 
   return (
-    <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-      <img className="res-logo" src={IMG_BASE_URL+url} alt={name} />
-      <h3>{name}</h3>
+    <div className="res-card flex gap-2 flex-col w-[280px] bg-gray-100 p-3 rounded-sm">
+      <img className="res-logo h-48 rounded-md" src={IMG_BASE_URL+url} alt={name} />
+      <h3 className="font-bold text-lg">{name}</h3>
       <h4>{cuisines.join(', ')}</h4>
       <h4>{avgRating} *</h4>
       <h4>{costForTwo}</h4>

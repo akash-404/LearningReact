@@ -36,9 +36,9 @@ const Body = () => {
 
     return resList.length === 0 ? (<Shimmer/>) : (
     <div className="body">
-      <div className="action-bar">
-		<div className="search">
-			<input type="text" className="search-input" value={searchText} onChange={ (e)=> {
+      <div className="flex items-center gap-16 mb-6 action-bar">
+		<div className="px-4 flex gap-4 search">
+			<input type="text" className="border border-solid border-black rounded search-input" value={searchText} onChange={ (e)=> {
 				 setSearchText(e.target.value)}
 				 } 
 				 onKeyDown={ (e)=>{
@@ -49,7 +49,7 @@ const Body = () => {
 						setFilteredRes(filteredRes);
 					}
 				 }} />
-			<button className="search-btn" onClick={()=>{
+			<button className="py-1 px-2 font-medium bg-green-200 rounded-lg search-btn" onClick={()=>{
 				const filteredRes = resList.filter((res)=> {
 					return res.info.name.toLowerCase().includes(searchText.toLowerCase());
 				})
@@ -57,9 +57,9 @@ const Body = () => {
 			}}>Search</button>
 		</div>
 		<div className="filters">
-			Filters:{" "}
+			<span className="font-medium">Filters:{" "}</span>
 			<button
-			className={activeFilter?'filter-btn active':'filter-btn'}
+			className={`px-2 py-1 rounded-lg ${activeFilter ? 'active bg-orange-100 border border-solid border-orange-600' : 'bg-gray-200'}`}
 			onClick={() => {
 				if(activeFilter){
 					setFilteredRes(resList);
@@ -75,7 +75,7 @@ const Body = () => {
 			</button>
 		</div>
 	  </div>
-      <div className="res-container">
+      <div className="res-container flex flex-wrap gap-8 m-4">
         {/* <RestaurantCard resData={allResList[0]} />
           <RestaurantCard resData={allResList[1]} />
           <RestaurantCard resData={allResList[2]} />
