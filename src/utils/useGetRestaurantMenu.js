@@ -5,7 +5,7 @@ import { MENU_API } from "../utils/constants";
 const useGetRestaurantMenu = (resId) =>{
 
     const [resInfo, setResInfo] = useState(null);
-    const [resMenu, setResMenu] = useState(null);
+    const [categories, setCategories] = useState(null);
     
     useEffect(()=>{
         fetchData();
@@ -15,13 +15,16 @@ const useGetRestaurantMenu = (resId) =>{
         const data = await fetch(MENU_API+resId);
         const json = await data.json();
         setResInfo(json?.data?.cards[2]?.card?.card.info);
-        setResMenu(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
-        console.log("Restaurant info----------", json?.data?.cards[2]?.card?.card.info);
-        console.log("Restaurant menu----------", json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card);
+        setCategories(json?.data?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards.filter(category => {
+            return category?.card?.card?.['@type'] === "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
+       }))
+       console.log(categories);
+        
         
     };
+
     
-    return {resInfo, resMenu};
+    return {resInfo, categories};
 }
 
 export default useGetRestaurantMenu;

@@ -1,35 +1,7 @@
 import { IMG_BASE_URL } from "../utils/constants";
 
 const RestaurantCard = (props) => {
-  //  without object destructuring
-  // const resData = props.resData;
-  // return (
-  //   <div className="res-card" style={{ backgroundColor: "#f0f0f0" }}>
-  //     <img
-  //       className="res-logo"
-  //       src={resData.info.image.url}
-  //       alt={resData.info.name}
-  //     />
-  //     <h3>{resData.info.name}</h3>
-  //     <h4>{resData.info.cuisine[0].name}, {resData.info?.cuisine[1]?.name}</h4>
-  //     <h4>{resData.info.rating.rating_text} *</h4>
-  //     <h4>{resData.info.cft.text}</h4>
-  //     <h4>{resData.order.deliveryTime}</h4>
-  //   </div>
-  // );
 
-  // for zomato data
-  // const {
-  //   image: { url },
-  //   name,
-  //   cuisine,
-  //   rating: { rating_text },
-  //   cft: { text: costForTwo },
-  // } = props?.resData?.info;
-  // const cuisineNames = cuisine.map((item) => item.name + ", ");
-  // const { deliveryTime } = props?.resData?.order;
-
-  // for Swiggy data
   const {
     cloudinaryImageId :url,
     name,
@@ -50,5 +22,19 @@ const RestaurantCard = (props) => {
     </div>
   );
 };
+
+// Higher order component - card with discount info
+// input -> RestaurantCard  ==>  output RestaurantCardOffer
+
+export const quickDeliveryLabelled = (RestaurantCard) => {
+  return (props) => {
+    return(
+      <div>
+        <label className="absolute bg-black text-white py-1 px-3 m-2 font-bold">Quick 🚀</label>
+        <RestaurantCard {...props} />
+      </div>
+    )
+  }
+}
 
 export default RestaurantCard;

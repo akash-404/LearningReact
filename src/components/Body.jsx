@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard, {quickDeliveryLabelled} from "./RestaurantCard";
 // import allResList from "../utils/mockData";
 import { useState, useEffect } from "react";
 import Shimmer from "./Shimmer";
@@ -11,6 +11,8 @@ const Body = () => {
 	const [searchText, setSearchText] = useState("");
 	const [filteredRes, setFilteredRes] = useState([]);
 	const [activeFilter, setActiveFilter] = useState(false); 
+
+	const RestaurantCardQuick = quickDeliveryLabelled(RestaurantCard);
 
 	useEffect(()=>{ fetchResData();}, []);
 
@@ -33,6 +35,7 @@ const Body = () => {
 	if(!onlineStatus){
 		return <h1>Looks like you're offline...!! Please check your internet connection</h1>
 	}
+	
 
     return resList.length === 0 ? (<Shimmer/>) : (
     <div className="body">
@@ -84,7 +87,7 @@ const Body = () => {
           <RestaurantCard resData={allResList[5]} /> */}
         {filteredRes.map((restaurant) => (
 			<Link className="flex"  key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
-				<RestaurantCard resData={restaurant} />
+				{restaurant.info.sla.deliveryTime < 20 ? <RestaurantCardQuick  resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
 			</Link>
         ))}
       </div>
