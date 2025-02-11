@@ -41,3 +41,11 @@ Structure---
     - Address
     - Contact
 */
+
+# Redux Toolkit
+- Install @reduxjs/toolkit and react-redux
+- Build our store
+- Connect the store to our app
+- Slice (cart slice)
+- dispatch(action)
+- Selector

@@ -1,9 +1,18 @@
 import { IMG_BASE_URL } from "../utils/constants";
+import { addItem } from "../utils/cartSlice";
+import { useDispatch } from "react-redux";
 
 
 const CategoryItemCard = ({item})=>{
 
+    const dispatch = useDispatch();
+
     const {isVeg, name, price, description, imageId, defaultPrice} = item.info;
+
+    const handleAddItem = (item)=>{
+        // dispatch an action to store
+        dispatch(addItem(item));
+    }
 
     return(
         <div className="categoryItem flex justify-between items-start gap-8 p-4 border-b border-gray-400 my-3">
@@ -13,9 +22,9 @@ const CategoryItemCard = ({item})=>{
                 <span className="font-semibold mb-1">₹ {price ? price/100 : defaultPrice/100}</span>
                 <p className="text-sm">{description}</p>
             </div>
-            <div className="relative">
+            <div className="relative flex flex-col gap-4 items-center justify-center">
                 <img className="w-32 rounded-md object-cover" src={IMG_BASE_URL+imageId} alt={name} />
-                <button className="ml-5 bg-white text-green-600 font-bold px-3 py-1 shadow-md rounded-md">Add +</button>
+                <button className="bg-white text-black-600 font-bold px-3 py-1 shadow-md rounded-md" onClick={() => handleAddItem(item)}>Add +</button>
             </div>
             
         </div>
