@@ -49,3 +49,19 @@ Structure---
 - Slice (cart slice)
 - dispatch(action)
 - Selector
+
+
+# Types of testing by dev
+ - Unit Testing
+ - Integration testing
+ - End to End testing - e2e testing
+
+
+# setting up testing in our app
+  - install React Testing Library - https://testing-library.com/docs/react-testing-library/intro/
+  - install jest - https://jestjs.io/docs/getting-started
+  - install babel dependencies - above link
+  - configure babel - above link
+  - configure parcel config file to disable default babel config - https://parceljs.org/languages/javascript/#usage-with-other-tools
+  - jest configuration - npx jest --init
+  - install jsdom library - If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately. - https://testing-library.com/docs/react-testing-library/setup
