@@ -68,3 +68,4 @@ Structure---
   - install @babel/preset-react library to make jsx work in jest
   - in babel.config.js add ["@babel/preset-react", { runtime: "automatic" }] in presets
   - install @testing-library/jest-dom - npm i -D @testing-library/jest-dom
+  - if a component is using redux and we need to render it while testing then we need to provide a redux store to it for rendering in isolation

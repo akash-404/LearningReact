@@ -13,7 +13,6 @@ const Header = () => {
 
   //selector will be used to get value from redux app store
   const cartItems = useSelector((store) => store.cart?.items);
-  console.log("cart items", cartItems);
   return (
     <div className="flex items-center justify-between bg-gray-100 shadow-md mb-10 py-2">
       <div className="logo-container ml-4">
@@ -29,7 +28,7 @@ const Header = () => {
           <li><Link to="/contact">Contact Us</Link></li>
           <li><Link to="/grocery">Grocery</Link></li>
           <li className="cursor-pointer font-bold"><Link to="/cart">Cart ({cartItems?.length})</Link></li>
-          <li className={`login-btn cursor-pointer ${btnName != "Login" ? 'font-bold':''}`} onClick={()=>{
+          <li role="button" className={`login-btn cursor-pointer ${btnName != "Login" ? 'font-bold':''}`} onClick={()=>{
             btnName === "Login" ? setBtnName(loggedInUser) : setBtnName("Login");
           }}>{btnName}</li>
           {/* <li className="font-semibold">{loggedInUser}</li> */}

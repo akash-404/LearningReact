@@ -1,0 +1,83 @@
+{
+    "info": {
+        "id": "808219",
+        "name": "NH1 Bowls - Highway To North",
+        "cloudinaryImageId": "RX_THUMBNAIL/IMAGES/VENDOR/2024/11/8/5f51e129-bb0b-4e17-b6aa-dcd055547587_808219.jpg",
+        "locality": "RAGHAVENDRA COLONY",
+        "areaName": "Serlingampally Circle No20",
+        "costForTwo": "₹250 for two",
+        "cuisines": [
+            "Punjabi",
+            "Home Food"
+        ],
+        "avgRating": 4.6,
+        "parentId": "22452",
+        "avgRatingString": "4.6",
+        "totalRatingsString": "488",
+        "sla": {
+            "deliveryTime": 15,
+            "lastMileTravel": 0.9,
+            "serviceability": "SERVICEABLE",
+            "slaString": "10-20 mins",
+            "lastMileTravelString": "0.9 km",
+            "iconType": "ICON_TYPE_EMPTY"
+        },
+        "availability": {
+            "nextCloseTime": "2025-02-14 02:00:00",
+            "opened": true
+        },
+        "badges": {
+            "imageBadges": [
+                {
+                    "imageId": "Green%20Dot%20Awards/Best%20In%20Dal%20Makhani.png",
+                    "description": "Delivery!"
+                }
+            ]
+        },
+        "isOpen": true,
+        "type": "F",
+        "badgesV2": {
+            "entityBadges": {
+                "imageBased": {
+                    "badgeObject": [
+                        {
+                            "attributes": {
+                                "description": "Delivery!",
+                                "imageId": "Green%20Dot%20Awards/Best%20In%20Dal%20Makhani.png"
+                            }
+                        }
+                    ]
+                },
+                "textBased": {},
+                "textExtendedBadges": {}
+            }
+        },
+        "aggregatedDiscountInfoV3": {
+            "header": "ITEMS",
+            "subHeader": "AT ₹100"
+        },
+        "differentiatedUi": {
+            "displayType": "ADS_UI_DISPLAY_TYPE_ENUM_DEFAULT",
+            "differentiatedUiMediaDetails": {
+                "lottie": {},
+                "video": {}
+            }
+        },
+        "reviewsSummary": {},
+        "displayType": "RESTAURANT_DISPLAY_TYPE_DEFAULT",
+        "restaurantOfferPresentationInfo": {},
+        "externalRatings": {
+            "aggregatedRating": {
+                "rating": "--"
+            }
+        },
+        "ratingsDisplayPreference": "RATINGS_DISPLAY_PREFERENCE_SHOW_SWIGGY"
+    },
+    "analytics": {
+        "context": "seo-data-69bd3df0-bef1-4c34-a799-533bbe63ab1a"
+    },
+    "cta": {
+        "link": "https://www.swiggy.com/city/hyderabad/nh1-bowls-highway-to-north-raghavendra-colony-serlingampally-circle-no20-rest808219",
+        "type": "WEBLINK"
+    }
+}
