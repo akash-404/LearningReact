@@ -65,3 +65,6 @@ Structure---
   - configure parcel config file to disable default babel config - https://parceljs.org/languages/javascript/#usage-with-other-tools
   - jest configuration - npx jest --init
   - install jsdom library - If you're using Jest 28 or later, jest-environment-jsdom package now must be installed separately. - https://testing-library.com/docs/react-testing-library/setup
+  - install @babel/preset-react library to make jsx work in jest
+  - in babel.config.js add ["@babel/preset-react", { runtime: "automatic" }] in presets
+  - install @testing-library/jest-dom - npm i -D @testing-library/jest-dom
