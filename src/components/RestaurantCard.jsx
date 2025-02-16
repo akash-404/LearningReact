@@ -12,7 +12,7 @@ const RestaurantCard = (props) => {
   } = props?.resData?.info;
 
   return (
-    <div className="res-card flex gap-2 flex-col w-[280px] bg-gray-100 p-3 rounded-sm hover:shadow-lg hover:bg-gray-200">
+    <div data-testid="resCard" className="res-card flex gap-2 flex-col w-[280px] bg-gray-100 p-3 rounded-sm hover:shadow-lg hover:bg-gray-200">
       <img className="res-logo h-48 rounded-md" src={IMG_BASE_URL+url} alt={name} />
       <h3 className="font-bold text-lg">{name}</h3>
       <h4>{cuisines.join(', ')}</h4>

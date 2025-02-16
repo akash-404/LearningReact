@@ -21,14 +21,13 @@ const Body = () => {
 		const jsonData = await data.json();
 		setResList(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
 		setFilteredRes(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
-		console.log(jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants);
+		console.log("=============================",jsonData?.data?.cards[1]?.card?.card?.gridElements?.infoWithStyle?.restaurants,"=============================");
 	}
 
 	// conditional rendering
 	// if(resList.length === 0){
 	// 	return <Shimmer/>
 	// }
-	console.log("rendering body component");
 
 	const onlineStatus = useOnlineStatus();
 
@@ -37,23 +36,23 @@ const Body = () => {
 	}
 	
 
-    return resList.length === 0 ? (<Shimmer/>) : (
+    return resList?.length === 0 ? (<Shimmer/>) : (
     <div className="body">
       <div className="flex items-center gap-16 mb-6 action-bar">
 		<div className="px-4 flex gap-4 search">
-			<input type="text" className="border border-solid border-black rounded search-input" value={searchText} onChange={ (e)=> {
+			<input data-testid="searchInput" type="text" className="border border-solid border-black rounded search-input" value={searchText} onChange={ (e)=> {
 				 setSearchText(e.target.value)}
 				 } 
 				 onKeyDown={ (e)=>{
 					if(e.key === 'Enter'){
-						const filteredRes = resList.filter((res)=> {
+						const filteredRes = resList?.filter((res)=> {
 							return res.info.name.toLowerCase().includes(searchText.toLowerCase());
 						})
 						setFilteredRes(filteredRes);
 					}
 				 }} />
 			<button className="py-1 px-2 font-medium bg-green-200 rounded-lg search-btn" onClick={()=>{
-				const filteredRes = resList.filter((res)=> {
+				const filteredRes = resList?.filter((res)=> {
 					return res.info.name.toLowerCase().includes(searchText.toLowerCase());
 				})
 				setFilteredRes(filteredRes);
@@ -62,6 +61,7 @@ const Body = () => {
 		<div className="filters">
 			<span className="font-medium">Filters:{" "}</span>
 			<button
+			data-testid="topRatedBtn"
 			className={`px-2 py-1 rounded-lg ${activeFilter ? 'active bg-orange-100 border border-solid border-orange-600' : 'bg-gray-200'}`}
 			onClick={() => {
 				if(activeFilter){
@@ -69,7 +69,7 @@ const Body = () => {
 					setActiveFilter(false);
 				}
 				else{
-					setFilteredRes(resList.filter(item => item.info.avgRating > 4.3 ));
+					setFilteredRes(resList?.filter(item => item.info.avgRating > 4.3 ));
 					setActiveFilter(true);
 				}
 			}}
@@ -85,7 +85,7 @@ const Body = () => {
           <RestaurantCard resData={allResList[3]} />
           <RestaurantCard resData={allResList[4]} />
           <RestaurantCard resData={allResList[5]} /> */}
-        {filteredRes.map((restaurant) => (
+        {filteredRes?.map((restaurant) => (
 			<Link className="flex"  key={restaurant.info.id} to={"/restaurant/" + restaurant.info.id}>
 				{restaurant.info.sla.deliveryTime < 20 ? <RestaurantCardQuick  resData={restaurant} /> : <RestaurantCard resData={restaurant} />}
 			</Link>
