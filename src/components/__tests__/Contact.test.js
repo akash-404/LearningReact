@@ -6,6 +6,24 @@ describe("Contact Us Page Test Case", ()=>{
     // can use either it or test, both are same
     // it("should load contact us component", () => {
     // test("should load contact us component", () => {
+
+
+    // beforeAll(()=>{
+    //     console.log("Before all");
+    // })
+    
+    // beforeEach(()=>{
+    //     console.log("Before each");
+    // })
+
+    // afterAll(()=>{
+    //     console.log("After all");
+    // })
+    
+    // afterEach(()=>{
+    //     console.log("After each");
+    // })
+
     it("should load contact us component", () => {
         render(<Contact/>);
         const heading = screen.getByRole("heading");

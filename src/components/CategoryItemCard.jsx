@@ -15,7 +15,7 @@ const CategoryItemCard = ({item})=>{
     }
 
     return(
-        <div className="categoryItem flex justify-between items-start gap-8 p-4 border-b border-gray-400 my-3">
+        <div data-testid="foodItems" className="categoryItem flex justify-between items-start gap-8 p-4 border-b border-gray-400 my-3">
             <div className="flex flex-col max-w-[80%]">
                 <span>{isVeg ? '🟩 Veg': '🟥Non-veg'}</span>
                 <span className="font-bold my-2">{name}</span>
